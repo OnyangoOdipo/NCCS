@@ -1,0 +1,288 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    color: #6E9F2D;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+    background-color: #6E9F2D;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 5px solid #4a7b1c;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #4a7b1c;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    background-color: #6E9F2D;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #4a7b1c;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 22%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #6E9F2D;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+/* Recent Activities Styles */
+.recent-activities {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.recent-activities h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #6E9F2D;
+}
+
+.recent-activities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-activities ul li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.recent-activities ul li:last-child {
+    border-bottom: none;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-top: 5px solid #6E9F2D;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 30%;
+    margin: 10px;
+    max-width: 350px;
+    min-width: 250px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #f9f9f9;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.footer-section h4::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #6E9F2D;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section form {
+    font-size: 14px;
+    color: #f1f1f1;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.footer-section a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #d3d3d3;
+}
+
+.footer-section .contact-info a {
+    color: #a9d18e;
+    text-decoration: underline;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer-section ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+footer form label {
+    display: block;
+    margin: 8px 0;
+    font-weight: normal;
+}
+
+footer form button {
+    background-color: #6E9F2D;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+footer form button:hover {
+    background-color: #4a7b1c;
+}
+
+.footer-bottom {
+    background-color: #292929;
+    padding: 10px 0;
+    color: #c3c3c3;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.social-links li a img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.social-links li a:hover {
+    transform: scale(1.1);
+}
+

@@ -23,11 +23,10 @@
                 <li><a href="#">Programmes</a></li>
                 <li><a href="#">Our Services</a></li>
                 <li><a href="#">Laws and Guidelines</a></li>
-                <li><a href="#">Media Centre</a></li>
                 <li><a href="#">NIE / AE Kenya</a></li>
                 <li><a href="#">Contacts</a></li>
-                <li><a href="#">Kenya Map</a></li>
-                <li><a href="#">E-waste</a></li>
+                <li><a href="customer_care.html">Customer Care</a></li>
+                <li><a href="admin_dashboard.html">Admin Dashboard</a></li>
             </ul>
         </nav>
     </header>
