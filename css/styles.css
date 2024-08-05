@@ -176,7 +176,7 @@ nav ul li a:hover {
 }
 
 .info-box {
-    background-color: #fff;
+    background-color: #6e9f2d71;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 10px;
@@ -301,7 +301,7 @@ nav ul li a:hover {
 .quick-links ul li a {
     color: #0044cc;
     padding: 5px 15px;
-    background-color: #f1f1f1;
+    background-color: #6e9f2d71;
     border-radius: 5px;
     display: block;
     text-align: center;
