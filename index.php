@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Environment Management Authority</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="./css/script.js"></script>
 </head>
 <body>
     <header>
@@ -34,13 +34,32 @@
 
     <main>
         <section class="slider">
-            <div class="slide">
-                <img src="https://via.placeholder.com/1366x400" alt="Desertification & Drought Day">
-                <div class="slide-info">
-                    <h3>Desertification & Drought Day</h3>
-                    <p>#United4Land - Our Legacy. Our Future. <br> Desertification and Drought Day - 17 June 2024</p>
-                    <p>Dol Dol, Nanyuki, Laikipia County</p>
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://pbs.twimg.com/media/GPxhDEQXkAAfLiq.jpg:large" alt="Desertification & Drought Day">
+                    <div class="slide-info">
+                        <h3>Desertification & Drought Day</h3>
+                        <p>#United4Land - Our Legacy. Our Future. <br> Desertification and Drought Day - 17 June 2024</p>
+                        <p>Dol Dol, Nanyuki, Laikipia County</p>
+                    </div>
                 </div>
+                <div class="slide">
+                    <img src="https://pbs.twimg.com/media/EcjCNxcWAAMJlgD.jpg" alt="Environmental Awareness">
+                    <div class="slide-info">
+                        <h3>Environmental Awareness</h3>
+                        <p>Join us in creating a sustainable future for our planet. <br> Together, we can make a difference.</p>
+                        <p>Nairobi, Kenya</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://www.educationnews.co.ke/wp-content/uploads/2021/10/Sokoro-Primary-school-pupils-in-Elburgon-Molo-in-Nakuru-County-plant-trees-at-their-school-during-tree-planting-day.-A-similar-approach-is-being-used-in-NEP-to-conserve-nature.-File-Photo.jpg" alt="Conservation Efforts">
+                    <div class="slide-info">
+                        <h3>Conservation Efforts</h3>
+                        <p>Preserving Kenya's natural beauty for generations to come. <br> Support local conservation projects.</p>
+                        <p>Masai Mara, Kenya</p>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
             </div>
             <div class="slide-controls">
                 <button class="prev-slide">&laquo;</button>
@@ -85,10 +104,10 @@
                     <a href="#">Read more &raquo;</a>
                 </div>
             </div>
-            <div class="news-controls">
+            <!-- <div class="news-controls">
                 <button class="prev-news">&laquo;</button>
                 <button class="next-news">&raquo;</button>
-            </div>
+            </div> -->
         </section>
 
         <section class="quick-links">
@@ -152,10 +171,10 @@
         <div class="footer-bottom">
             <p>&copy; 2024 National Environment Management Authority. All rights reserved.</p>
             <ul class="social-links">
-                <li><a href="#"><img src="css/icons/facebook-icon.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="css/icons/twitter-icon.png" alt="Twitter"></a></li>
-                <li><a href="#"><img src="css/icons/instagram-icon.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="css/icons/linkedin-icon.png" alt="LinkedIn"></a></li>
+                <li><a href="#"><img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook"></a></li>
+                <li><a href="#"><img src="https://img.icons8.com/?size=100&id=13963&format=png&color=000000" alt="Twitter"></a></li>
+                <li><a href="#"><img src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="Instagram"></a></li>
+                <li><a href="#"><img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" alt="LinkedIn"></a></li>
             </ul>
         </div>
     </footer>
