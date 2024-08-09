@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_id'] = $id;
         $_SESSION['role'] = $role;
 
-        header('Location: dashboard.php');
+        header('Location: admin_dashboard.php');
     } else {
         echo "Invalid credentials";
     }
