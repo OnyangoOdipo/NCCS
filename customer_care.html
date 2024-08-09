@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEMA Customer Care</title>
     <link rel="stylesheet" href="./css/customer_care.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/intro.min.js"></script> <!-- Removed integrity attribute -->
 </head>
 <body>
     <div class="container">
@@ -12,7 +14,7 @@
             <h1>NEMA Customer Care System</h1>
             <nav>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
+                    <li><a id="homeButton" href="../index.php">Home</a></li>
                     <li><a href="#">Contact Support</a></li>
                 </ul>
             </nav>
@@ -25,15 +27,15 @@
             </section>
             <section class="results-section">
                 <h2>Common Problems</h2>
-                <div class="card">
+                <div class="card" id="howToLoginCard" onclick="startTutorial('howToLoginCard')">
                     <h3>How to Login</h3>
                     <p>If you're having trouble logging in, make sure you are using the correct username and password. If you forgot your credentials, use the 'Forgot Password' link on the login page.</p>
                 </div>
-                <div class="card">
+                <div class="card" id="checkLicenseCard" onclick="startTutorial('checkLicenseCard')">
                     <h3>Where to Check Your License</h3>
                     <p>To check your license status, log in to your account and navigate to the 'My Licenses' section from the dashboard.</p>
                 </div>
-                <div class="card">
+                <div class="card" id="calculateTotalCard" onclick="startTutorial('calculateTotalCard')">
                     <h3>Calculating Your Total</h3>
                     <p>To calculate your total, go to the 'Billing' section where you can see a detailed breakdown of your charges and total amount.</p>
                 </div>
@@ -43,5 +45,6 @@
             <p>&copy; 2024 National Environment Management Authority. All rights reserved.</p>
         </footer>
     </div>
+    <script src="js/scripts.js"></script> <!-- Custom JS for Intro.js steps -->
 </body>
 </html>
