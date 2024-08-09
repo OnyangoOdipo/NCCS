@@ -19,18 +19,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/authentication.css">
 </head>
 <body>
     <form method="POST" action="register.php">
-        <input type="text" name="username" required placeholder="Username">
-        <input type="password" name="password" required placeholder="Password">
-        <select name="role">
-            <option value="customer">Customer</option>
-            <option value="intern">Intern</option>
-            <option value="admin">Admin</option>
-        </select>
-        <button type="submit">Register</button>
+        <div class="auth-container">
+            <h1>Sign Up for NEMA</h1>
+            <form action="/signup" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.php">Login</a></p>
+        </div>
     </form>
 </body>
 </html>

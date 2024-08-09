@@ -30,14 +30,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/authentication.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css">
 </head>
 <body>
     <form id="loginForm" method="POST" action="login.php">
-        <input type="text" id="username" name="username" required placeholder="Username">
-        <input type="password" id="password" name="password" required placeholder="Password">
-        <button type="submit">Login</button>
+        <div class="auth-container">
+            <h1>Login to NEMA</h1>
+            <form action="/login" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="register.php">Sign up</a></p>
+        </div>
     </form>
 
     <script src="js/scripts.js"></script>
