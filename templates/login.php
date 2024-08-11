@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Prepare the statement to select user information based on the username
     $stmt = $conn->prepare("SELECT id, password, role FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -12,12 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->fetch();
     $stmt->close();
 
+    // Verify the password
     if (password_verify($password, $hashed_password)) {
         session_start();
         $_SESSION['user_id'] = $id;
         $_SESSION['role'] = $role;
 
-        header('Location: admin_dashboard.php');
+        // Redirect based on user role
+        if ($role === 'admin') {
+            header('Location: admin_dashboard.php');
+        } elseif ($role === 'intern') {
+            header('Location: intern_dashboard.php');
+        } else {
+            // Default case: if the role is something else, redirect to a general dashboard or show an error
+            header('Location: dashboard.php');
+        }
     } else {
         echo "Invalid credentials";
     }
@@ -37,15 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form id="loginForm" method="POST" action="login.php">
         <div class="auth-container">
             <h1>Login to NEMA</h1>
-            <form action="/login" method="POST">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
-                <button type="submit">Login</button>
-            </form>
+            <button type="submit">Login</button>
             <p>Don't have an account? <a href="register.php">Sign up</a></p>
         </div>
     </form>
@@ -83,7 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 doneLabel: 'Finish',
                 initialStep: parseInt(localStorage.getItem('currentStep'), 10) || 0
             }).oncomplete(function() {
-                // Clear the tutorial state from local storage when the tutorial finishes
                 localStorage.removeItem('tutorialSteps');
                 localStorage.removeItem('currentStep');
             }).start();

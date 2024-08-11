@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 <body>
 <body>
     <header>
-        <h1>Register</h1>
+        <h1></h1>
     </header>
     <div class="container">
         <h2>Create a New Account</h2>
@@ -59,10 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
             <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
         <form method="POST" action="register.php">
-            Username: <input type="text" name="username" required><br>
-            Password: <input type="password" name="password" required><br>
-            Confirm Password: <input type="password" name="confirm_password" required><br>
-            Role: 
+            Username <input type="text" name="username" required><br>
+            Password <input type="password" name="password" required><br>
+            Confirm Password <input type="password" name="confirm_password" required><br>
+            Role 
             <select name="role" required>
                 <option value="supervisor">Supervisor</option>
                 <option value="intern">Intern</option>

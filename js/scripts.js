@@ -1,76 +1,100 @@
 function startTutorial(cardId) {
     const card = document.getElementById(cardId);
     const cardTitle = card.querySelector('h3').textContent;
-
+  
     let steps = [];
-
+  
     switch (cardTitle) {
-        case 'How to Login':
-            steps = [
+      case 'How to Login':
+        steps = [
+          {
+            intro: "Welcome to the NEMA Customer Care System! Let's guide you through the login process."
+          },
+          {
+            intro: "You will now be redirected to the login page to complete the process.",
+            onbeforechange: function() {
+              const loginSteps = [
                 {
-                    intro: "Welcome to the NEMA Customer Care System! Let's guide you through the login process."
+                  intro: "Enter your username here.",
+                  element: '#username',
+                  position: 'right'
                 },
                 {
-                    intro: "You will now be redirected to the login page to complete the process.",
-                    onbeforechange: function() {
-                        const loginSteps = [
-                            {
-                                intro: "Enter your username here.",
-                                element: '#username',
-                                position: 'right'
-                            },
-                            {
-                                intro: "Enter your password here.",
-                                element: '#password',
-                                position: 'right'
-                            },
-                            {
-                                intro: "Finally, click the 'Login' button to log in to your account.",
-                                element: '#loginForm button[type="submit"]',
-                                position: 'right'
-                            }
-                        ];
-                        localStorage.setItem('tutorialSteps', JSON.stringify(loginSteps));
-                        localStorage.setItem('currentStep', '0');
-                        window.location.href = './templates/login.php';
-                    }
+                  intro: "Enter your password here.",
+                  element: '#password',
+                  position: 'right'
+                },
+                {
+                  intro: "Finally, click the 'Login' button to log in to your account.",
+                  element: '#loginForm button[type="submit"]',
+                  position: 'right'
                 }
+              ];
+  
+              // Append login steps to existing tutorial steps
+              const tutorialSteps = JSON.parse(localStorage.getItem('tutorialSteps')) || [];
+              const completeSteps = tutorialSteps.concat(loginSteps);
+              localStorage.setItem('tutorialSteps', JSON.stringify(completeSteps));
+              localStorage.setItem('currentStep', tutorialSteps.length); // Set current step to the first login step
+              window.location.href = './templates/login.php';
+            }
+          }
+        ];
+        break;
+
+        case 'How do you apply for your license':
+            steps = [
+              {
+                intro: "Let us guide you on where to apply for your license."
+              },
+              {
+                intro: "You will now be redirected to the license section to apply for your license.",
+                onbeforechange: function() {
+                  const checkLicenseSteps = [
+                    {
+                        intro: "Click here to start application process.",
+                        element: '#apply-btn',
+                        position: 'right'
+                    },
+                    {
+                      intro: "Select license type.",
+                      element: '#license_type',
+                      position: 'right'
+                    },
+                    {
+                      intro: "Upload required documents.",
+                      element: '#documents',
+                      position: 'right'
+                    },
+                    {
+                      intro: "Here, you can view the status of all your licenses.",
+                      element: '#licenseStatusSection',
+                      position: 'right'
+                    }
+                  ];
+          
+                  const tutorialSteps = JSON.parse(localStorage.getItem('tutorialSteps')) || [];
+                  const completeSteps = tutorialSteps.concat(checkLicenseSteps);
+                  localStorage.setItem('tutorialSteps', JSON.stringify(completeSteps));
+                  localStorage.setItem('currentStep', tutorialSteps.length); // Set current step to the first check license step
+                  window.location.href = './templates/licensing_portal.php'; // Replace with your license portal URL
+                }
+              }
             ];
-            break;
-        case 'Where to Check Your License':
-            // Add steps for the license checking tutorial
-            break;
-        case 'Calculating Your Total':
-            // Add steps for the total calculation tutorial
-            break;
-        default:
-            console.error('No tutorial found for card:', cardTitle);
+            break;          
+      case 'Calculating Your Total':
+        // ... similar logic for calculating total tutorial ...
+        break;
+      default:
+        console.error('No tutorial found for card:', cardTitle);
     }
-
+  
     introJs().setOptions({
-        steps: steps,
-        nextLabel: 'Next',
-        prevLabel: 'Previous',
-        skipLabel: 'Skip',
-        doneLabel: 'Finish'
-    }).oncomplete(function() {
-        let redirectUrl = '';
-        switch (cardTitle) {
-            case 'How to Login':
-                redirectUrl = './templates/login.php';
-                break;
-            case 'Where to Check Your License':
-                redirectUrl = './templates/license.php';
-                break;
-            case 'Calculating Your Total':
-                redirectUrl = './templates/billing.php';
-                break;
-        }
-
-        // Save the initial steps for the redirection tutorial in local storage
-        localStorage.setItem('tutorialSteps', JSON.stringify(steps));
-        localStorage.setItem('currentStep', '1'); // The step after redirection
-
-        window.location.href = redirectUrl;
+      steps: steps,
+      nextLabel: 'Next',
+      prevLabel: 'Previous',
+      skipLabel: 'Skip',
+      doneLabel: 'Finish'
     }).start();
-}
+  }
+  

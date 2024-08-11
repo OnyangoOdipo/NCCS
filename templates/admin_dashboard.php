@@ -2,11 +2,11 @@
 session_start();
 include '../includes/db.php';
 
-// Ensure the user is logged in and is a supervisor
-// if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'supervisor') {
-//     header("Location: ../login.php");
-//     exit;
-// }
+ //Ensure the user is logged in and is a supervisor
+ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'supervisor') {
+     header("Location: ../login.php");
+     exit;
+ }
 
 $user_id = $_SESSION['user_id'];
 
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create_task'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supervisor Dashboard</title>
-    <link rel="stylesheet" href="/css/newadmin_dashboard.css">
+    <link rel="stylesheet" href="../css/newadmin_dashboard.css">
 </head>
 <body>
     <header>

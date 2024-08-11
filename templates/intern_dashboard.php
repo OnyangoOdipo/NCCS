@@ -3,10 +3,10 @@ session_start();
 include '../includes/db.php';
 
 // Ensure the user is logged in and is an intern
-// if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'intern') {
-//     echo '<a href="login.php">Login</a> | <a href="register.php">Register</a>';
-//     exit;
-// }
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'intern') {
+    echo '<a href="login.php">Login</a> | <a href="register.php">Register</a>';
+    exit;
+}
 
 $user_id = $_SESSION['user_id'];
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mark_completed'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intern Dashboard</title>
-    <link rel="stylesheet" href="/css/newadmin_dashboard.css">
+    <link rel="stylesheet" href="../css/newadmin_dashboard.css">
 </head>
 <body>
     <header>
