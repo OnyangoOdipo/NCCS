@@ -26,9 +26,9 @@
                 <li><a href="#">NIE / AE Kenya</a></li>
                 <li><a href="#">Contacts</a></li>
                 <li><a href="customer_care.html">Customer Care</a></li>
-                <li><a href="/templates/dashboard.php">Dashboard</a></li>
-                <li><a href="/templates/login.php">Register</a></li>
-                <li><a href="/templates/register.php">Login</a></li>
+                <li><a href="./templates/dashboard.php">Dashboard</a></li>
+                <li><a href="./templates/login.php">Register</a></li>
+                <li><a href="./templates/register.php">Login</a></li>
                 <!-- <li><a href="/templates/admin_dashboard.php">Admin Dashboard</a></li>
                 <li><a href="/templates/intern_dashboard.php">Intern Dashboard</a></li> -->
             </ul>

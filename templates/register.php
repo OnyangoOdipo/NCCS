@@ -138,6 +138,7 @@ margin-bottom: 10px;
         <select id="role" name="role" required>
             <option value="supervisor">Supervisor</option>
             <option value="intern">Intern</option>
+            <option value="user">User</option>
         </select>
 
         <input type="submit" name="register" value="Register">
