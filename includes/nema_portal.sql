@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2024 at 07:04 PM
+-- Generation Time: Aug 23, 2024 at 03:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -148,7 +148,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('intern','supervisor') NOT NULL
+  `role` enum('intern','supervisor','user') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -162,7 +162,11 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 (4, 'intern', '$2y$10$EgiKvKESCBsxRgPyQ1si0u844dAMnrX/GThmv2fYy4uI2ouTEjSCi', 'intern'),
 (5, 'admin@admin.com', '$2y$10$Z6FNgR1uaRRtJ9seeDNx0OZ3bgEymCW5R6BQA4sprxSl3R/.Gsi0a', 'supervisor'),
 (6, 'admin', '$2y$10$.V.PWVP8opAzTvlmzrdZIuJzYXMSHeIkHdhhVqIRO4rcmdzVT/aZG', 'supervisor'),
-(7, 'supervisor', '$2y$10$F/eDIklB/5w93hzVM6/iruMEehmwWePggFoJvctXAGQCKzNqkJPsW', 'supervisor');
+(7, 'supervisor', '$2y$10$F/eDIklB/5w93hzVM6/iruMEehmwWePggFoJvctXAGQCKzNqkJPsW', 'supervisor'),
+(8, 'shadrack', '$2y$10$Q4OE1MzOUEOdlbU5VqcLtOfQiXZK38633.Ln4G.kEsHnDTVXs1DGi', 'supervisor'),
+(9, 'janobe@gmail.com', '$2y$10$Jh/hCBhehwkCTsto0oFsWO2GHnJOxiqkgfgDapScVLPpi0Kx.c4xq', 'user'),
+(10, 'shaddy', '$2y$10$ss.RgLhQvFFkPB65v0sUNOr1gSo7NDcgauliqzpC8Nn4RJSBki.9q', 'intern'),
+(11, 'changed', '$2y$10$afVs61eAAauO8G6EUyLjm.1iWoXDhu8KUFXMAo4a/7G98p/0q7Amy', 'user');
 
 -- --------------------------------------------------------
 
@@ -184,7 +188,13 @@ CREATE TABLE `user_logs` (
 
 INSERT INTO `user_logs` (`id`, `user_id`, `login_time`, `logout_time`, `created_at`) VALUES
 (1, 4, '2024-08-11 18:52:08', '2024-08-11 19:52:19', '2024-08-11 16:52:19'),
-(2, 7, '2024-08-11 18:52:54', NULL, '2024-08-11 16:52:54');
+(2, 7, '2024-08-11 18:52:54', NULL, '2024-08-11 16:52:54'),
+(3, 8, '2024-08-23 13:57:35', '2024-08-23 15:25:16', '2024-08-23 12:25:16'),
+(4, 8, '2024-08-23 14:36:39', '2024-08-23 15:53:53', '2024-08-23 12:53:53'),
+(5, 9, '2024-08-23 14:54:20', '2024-08-23 15:55:57', '2024-08-23 12:55:57'),
+(6, 9, '2024-08-23 14:56:30', NULL, '2024-08-23 12:56:30'),
+(7, 10, '2024-08-23 14:58:04', '2024-08-23 15:59:26', '2024-08-23 12:59:26'),
+(8, 11, '2024-08-23 14:59:45', NULL, '2024-08-23 12:59:45');
 
 --
 -- Indexes for dumped tables
@@ -280,13 +290,13 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_logs`
 --
 ALTER TABLE `user_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
